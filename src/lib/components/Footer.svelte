@@ -17,6 +17,7 @@
     >
         <path d="M18 2h-3a6 6 0 0 0-6 6v3H6v4h3v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z"></path>
     </svg>
+    Facebook
 </a>
 
 <style>
