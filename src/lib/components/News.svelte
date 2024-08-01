@@ -1,49 +1,75 @@
-    <script lang="ts">
-        let {news}: {
-            news: {
-                title: string;
-                description: string;
-                imgUrl?: string;
-            }
+<script lang="ts">
+    import Card from './Card.svelte';
 
-        } = $props()
+    let {news}: {
+        news: {
+            title: string;
+            description: string;
+            imgUrl?: string;
+            date: string
+        }
+    } = $props()
 
-    </script>
+    let showCard = $state(false);
 
-    <div class="card">
+    function cardify() {
+        showCard = true;
+    }
+
+    function closeCard() {
+        showCard = false;
+    }
+</script>
+
+    <div class="card" onclick={cardify}>
+        <p>{news.date}</p>
         {#if news.imgUrl}
             <img src={news.imgUrl} alt={news.title} class="card-image" />
         {/if}
         <h2>{news.title}</h2>
-        <p>{news.description}</p>
     </div>
 
-    <style lang="scss">
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-            width: 75%;
-            /*max-width: 500px;*/
-            /*max-width: 500px;*/
-            margin: 16px auto; /* Center the card */
-            text-align: center; /* Center text for a clean look */
-        }
+{#if showCard}
+    <div class="overlay">
+        <Card {news} onClose={closeCard} />
+    </div>
+{/if}
 
-        .card-image {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 8px;
-        }
+<style lang="scss">
 
-        h2 {
-            margin: 0;
-            font-size: 1.2em;
-        }
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    width: 75%;
+    margin: 16px auto;
+    text-align: center;
+    cursor: pointer;
+    background: white; /* Ensure card content is visible */
+  }
 
-        p {
-            margin: 8px 0 0;
-        }
-    </style>
+  .card-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  p {
+    text-align: right;
+  }
+</style>
