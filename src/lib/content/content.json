@@ -1,0 +1,5 @@
+{
+  "description1": "<p>Description with <strong>HTML</strong> content.</p>",
+  "description2": "<p>Another description with <em>different</em> formatting.</p>",
+  "description4": "<p>Multiple</p><p>paragraphs</p>"
+}
