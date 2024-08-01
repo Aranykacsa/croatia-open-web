@@ -2,17 +2,20 @@
     import Header from "$lib/components/Header.svelte";
     import News from "$lib/components/News.svelte";
     import Footer from "$lib/components/Footer.svelte";
+    import descriptions from '$lib/content/content.json';
 
     type CardData = {
         title: string;
         description: string;
         imgUrl?: string;
+        date: string;
     };
 
     const cards: CardData[] = [
-        {title: 'Card 1', description: 'This is the first card', imgUrl:'./favicon.png'},
-        {title: 'Card 2', description: 'This is the second card'},
-        {title: 'Card 3', description: 'This is the third card'},
+        {title: 'Card 1', date: '2024.08.01', description: descriptions.description1, imgUrl:'./favicon.png'},
+        {title: 'Card 2', date: '2024.08.01', description: descriptions.description2},
+        {title: 'Card 3', date: '2024.08.01', description: 'This is the third card🤣'},
+        {title: 'Card 4', date: '2024.08.01', description: descriptions.description4},
     ];
 
 </script>
