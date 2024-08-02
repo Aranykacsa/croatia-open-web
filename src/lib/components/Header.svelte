@@ -1,5 +1,4 @@
 <script lang="ts">
-    // TypeScript code can be added here if needed
 import {goto} from "$app/navigation";
 </script>
 
@@ -23,7 +22,14 @@ import {goto} from "$app/navigation";
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .nav-item a {
+    .nav-item a{
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .nav-item label{
         text-decoration: none;
         color: inherit;
         font-weight: 600;
@@ -31,6 +37,10 @@ import {goto} from "$app/navigation";
     }
 
     .nav-item a:hover {
+        color: #61dafb;
+    }
+
+    .nav-item label:hover {
         color: #61dafb;
     }
 
@@ -46,19 +56,15 @@ import {goto} from "$app/navigation";
 
 <div class="header">
     <div class="nav-item">
-        <a href="/registration">Registration</a>
+        <label for="/About" onclick={async () => await goto("about")}>About</label>
     </div>
     <div class="separator"></div>
     <div class="nav-item">
-        <a href="/About.svelte">About</a>
+        <label for="/About" onclick={async () => await goto("organizers")}>Organizers</label>
     </div>
     <div class="separator"></div>
     <div class="nav-item">
-        <a href="/organizer">Organizer</a>
-    </div>
-    <div class="separator"></div>
-    <div class="nav-item">
-        <label for="/About" onclick={async () => await goto("About")}>About</label>
+        <label for="/About" onclick={async () => await window.open("https://www.orienteeringonline.net/CompetitionBasicInfo.aspx?CompetitionID=13445")}>Registration</label>
     </div>
 
 </div>
