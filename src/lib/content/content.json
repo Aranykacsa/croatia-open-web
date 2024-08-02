@@ -4,19 +4,19 @@
       "title": "Title3",
       "description": "<p>Description with <strong>HTML</strong> content.</p><img src='./favicon.png' alt='image'>",
       "date": "2024.08.02.",
-      "imgUrl": "./minta.png"
+      "imgUrl": "./content/minta.png"
     },
     {
       "title": "Title2",
       "description": "<p>Another description with <em>different</em> formatting.</p>",
       "date": "2024.08.01.",
-      "imgUrl": "./pikaso_texttoimage_university-building-illusatrtion-with-no-backgroun.jpeg"
+      "imgUrl": "./content/pikaso_texttoimage_university-building-illusatrtion-with-no-backgroun.jpeg"
     },
     {
       "title": "Title1",
       "description": "<p>Multiple</p><p>paragraphs</p>",
       "date": "2024.07.31.",
-      "imgUrl": "./pte.png"
+      "imgUrl": "./content/pte.png"
     }
   ]
 }
