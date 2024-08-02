@@ -1,14 +1,49 @@
 <script lang="ts">
-import {goto} from "$app/navigation";
+    import {goto} from "$app/navigation";
+
+    type button = {
+        name: string,
+        onClick: () => void,
+    }
+
+    let pages: button[] = [
+        {
+            name: "About",
+            onClick: async () => await goto("about"),
+        },
+        {
+            name: "Organizers",
+            onClick: async () => await goto("organizers"),
+        },
+        {
+            name: "Registration",
+            onClick: async () => window.open("https://www.orienteeringonline.net/CompetitionBasicInfo.aspx?CompetitionID=13445")
+
+        },
+
+    ]
+
 </script>
 
-<style>
+<div class="header">
+    {#each pages as page, i}
+        <div class="nav-item">
+            <label for={page.name} onclick={page.onClick}>{page.name}</label>
+        </div>
+        {#if i+1 !== pages.length}
+            <div class="separator"></div>
+        {/if}
+
+    {/each}
+</div>
+
+<style lang="scss">
     .header {
         display: flex;
         justify-content: flex-end; /* Align items to the right */
         align-items: stretch; /* Stretch items to the height of the container */
         background-color: #282c34;
-        padding: 30px;
+        padding: 20px;
         /*margin: 20px; !* Space around the header *!*/
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -22,14 +57,14 @@ import {goto} from "$app/navigation";
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .nav-item a{
+    .nav-item a {
         text-decoration: none;
         color: inherit;
         font-weight: 600;
         transition: color 0.3s;
     }
 
-    .nav-item label{
+    .nav-item label {
         text-decoration: none;
         color: inherit;
         font-weight: 600;
@@ -53,18 +88,3 @@ import {goto} from "$app/navigation";
         margin: 0 15px; /* Spacing around the separator */
     }
 </style>
-
-<div class="header">
-    <div class="nav-item">
-        <label for="/About" onclick={async () => await goto("about")}>About</label>
-    </div>
-    <div class="separator"></div>
-    <div class="nav-item">
-        <label for="/About" onclick={async () => await goto("organizers")}>Organizers</label>
-    </div>
-    <div class="separator"></div>
-    <div class="nav-item">
-        <label for="/About" onclick={async () => await window.open("https://www.orienteeringonline.net/CompetitionBasicInfo.aspx?CompetitionID=13445")}>Registration</label>
-    </div>
-
-</div>
