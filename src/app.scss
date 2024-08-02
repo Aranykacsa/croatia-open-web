@@ -1,0 +1,66 @@
+$xs: 0;
+$sm: 280px;
+$md: 560px;
+$lg: 840px;
+$xl: 1120px;
+$xxl: 1680px;
+
+@mixin xs {
+  @media (min-width: $xs) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $xxl) {
+    @content;
+  }
+}
+
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header is above other content */
+  //background-color: white; /* Ensure background color if needed */
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the footer is above other content */
+  background-color: white; /* Ensure background color if needed */
+}
+
+.content {
+  padding-top: 60px; /* Adjust based on header height */
+  padding-bottom: 40px; /* Adjust based on footer height */
+}
