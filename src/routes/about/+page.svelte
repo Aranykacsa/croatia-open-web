@@ -1,7 +1,6 @@
 <script lang="ts">
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
-    import descriptions from '$lib/content/content.json';
     import Compass from "$lib/components/Compass.svelte";
 
     type NewsData = {
@@ -11,8 +10,8 @@
         date: string;
     };
 
-    const newsList: NewsData[] = descriptions.news;
 </script>
+
 <main>
     <div class="fixed-header">
         <Header/>
