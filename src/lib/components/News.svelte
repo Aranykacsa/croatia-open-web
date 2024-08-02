@@ -10,6 +10,8 @@
         }
     } = $props()
 
+    console.log(news.imgUrl);
+
     let showCard = $state(false);
 
     function cardify() {
@@ -31,22 +33,28 @@
 
 {#if showCard}
     <div class="overlay">
-        <Card {news} onClose={closeCard} />
+        <Card {news} onClose={closeCard}/>
     </div>
 {/if}
 
 <style lang="scss">
+  .card:hover {
+    border-color: rgba(0, 139, 248, 0.57);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.5);
+  }
 
   .card {
-    border: 1px solid #ccc;
+    border: 2px solid #000000;
     border-radius: 8px;
     padding: 16px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    width: 75%;
+    width: 70%;
     margin: 16px auto;
     text-align: center;
     cursor: pointer;
-    background: white; /* Ensure card content is visible */
+    background: #ffffff;
+    position: relative; /* Ensure card-button positioning works correctly */
+    transition: 0.3s ease;
   }
 
   .card-image {
