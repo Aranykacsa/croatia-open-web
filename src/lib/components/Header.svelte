@@ -1,5 +1,6 @@
 <script lang="ts">
     // TypeScript code can be added here if needed
+import {goto} from "$app/navigation";
 </script>
 
 <style>
@@ -49,10 +50,15 @@
     </div>
     <div class="separator"></div>
     <div class="nav-item">
-        <a href="/about">About</a>
+        <a href="/About.svelte">About</a>
     </div>
     <div class="separator"></div>
     <div class="nav-item">
         <a href="/organizer">Organizer</a>
     </div>
+    <div class="separator"></div>
+    <div class="nav-item">
+        <label for="/About" onclick={async () => await goto("About")}>About</label>
+    </div>
+
 </div>
