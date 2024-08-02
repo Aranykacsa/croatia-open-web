@@ -1,5 +1,5 @@
 <script lang="ts">
-    let { url }: {url: string} = $props();
+    let url: string = "https://www.facebook.com/croatiaopen.orienteering"
 </script>
 
 <div class="footer">
