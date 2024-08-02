@@ -4,25 +4,56 @@
     import Footer from "$lib/components/Footer.svelte";
     import descriptions from '$lib/content/content.json';
 
-    type CardData = {
+    type NewsData = {
         title: string;
         description: string;
         imgUrl?: string;
         date: string;
     };
 
-    const cards: CardData[] = [
-        {title: 'Card 1', date: '2024.08.01', description: descriptions.description1, imgUrl:'./favicon.png'},
-        {title: 'Card 2', date: '2024.08.01', description: descriptions.description2},
-        {title: 'Card 3', date: '2024.08.01', description: 'This is the third card🤣'},
-        {title: 'Card 4', date: '2024.08.01', description: descriptions.description4},
-    ];
-
+    const newsList: NewsData[] = descriptions.news;
 </script>
+<main>
+    <div class="fixed-header">
+        <Header/>
+    </div>
 
-<Header/>
-{#each cards as card}
-    <News news={card}/>
-{/each}
+    <div class="content">
+        {#each newsList as news}
+            <News news={news}/>
+        {/each}
+    </div>
 
-<Footer url={"https://www.facebook.com/croatiaopen.orienteering"}/>
+    <div class="fixed-footer">
+        <Footer url={"https://www.facebook.com/croatiaopen.orienteering"}/>
+    </div>
+</main>
+
+<style lang="scss">
+    .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure the header is above other content */
+        background-color: white; /* Ensure background color if needed */
+    }
+
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensure the footer is above other content */
+        background-color: white; /* Ensure background color if needed */
+    }
+
+    .content {
+        padding-top: 60px; /* Adjust based on header height */
+        padding-bottom: 40px; /* Adjust based on footer height */
+    }
+
+    main{
+        background-image: url("/topography.svg")
+    }
+</style>
