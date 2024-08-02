@@ -48,7 +48,7 @@
     border-radius: 8px;
     padding: 16px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    width: 70%;
+    width: 50%;
     margin: 16px auto;
     text-align: center;
     cursor: pointer;
