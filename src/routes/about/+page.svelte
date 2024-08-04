@@ -2,19 +2,21 @@
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
     // import Compass from "$lib/components/Compass.svelte";
+    import about from "$lib/content/about.json"
 
-    type NewsData = {
-        title: string;
-        description: string;
-        imgUrl?: string;
-        date: string;
-    };
-
+    let info: {
+        title: string,
+        email: string,
+        address: string,
+    } = about
 </script>
 
 
 <div class="fixed-header">
     <Header/>
+</div>
+<div class="content">
+    {@html info.title}
 </div>
 
 <div class="fixed-footer">
