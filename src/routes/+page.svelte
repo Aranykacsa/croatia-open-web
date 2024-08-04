@@ -2,7 +2,7 @@
     import Header from "$lib/components/Header.svelte";
     import News from "$lib/components/News.svelte";
     import Footer from "$lib/components/Footer.svelte";
-    import descriptions from '$lib/content/content.json';
+    import descriptions from '$lib/content/news.json';
 
     type NewsData = {
         title: string;

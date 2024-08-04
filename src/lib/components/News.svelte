@@ -16,11 +16,14 @@
 
     function cardify() {
         showCard = true;
+        document.body.style.overflow = 'hidden';  // Disable scrolling
     }
 
     function closeCard() {
         showCard = false;
+        document.body.style.overflow = 'auto';  // Enable scrolling
     }
+
 </script>
 
     <div class="card" onclick={cardify}>

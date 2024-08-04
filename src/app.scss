@@ -1,6 +1,6 @@
 $xs: 0;
-$sm: 280px;
-$md: 560px;
+$sm: 520px;
+$md: 670px;
 $lg: 840px;
 $xl: 1120px;
 $xxl: 1680px;
@@ -41,14 +41,13 @@ $xxl: 1680px;
   }
 }
 
-
 .fixed-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the header is above other content */
-  //background-color: white; /* Ensure background color if needed */
+  z-index: 1000;
+  background-color: white; /* Adjust as needed */
 }
 
 .fixed-footer {
@@ -56,11 +55,36 @@ $xxl: 1680px;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensure the footer is above other content */
-  background-color: white; /* Ensure background color if needed */
+  z-index: 1000;
+  background-color: white; /* Adjust as needed */
 }
 
 .content {
   padding-top: 60px; /* Adjust based on header height */
   padding-bottom: 40px; /* Adjust based on footer height */
+
+  @include xs {
+    padding-top: 60px; /* Adjust based on header height */
+    padding-bottom: 40px; /* Adjust based on footer height */
+  }
+
+  @include sm {
+    padding-top: 80px; /* Adjust based on header height */
+    padding-bottom: 60px; /* Adjust based on footer height */
+  }
+
+  @include md {
+    padding-top: 100px; /* Adjust based on header height */
+    padding-bottom: 80px; /* Adjust based on footer height */
+  }
+
+  @include lg {
+    padding-top: 120px; /* Adjust based on header height */
+    padding-bottom: 100px; /* Adjust based on footer height */
+  }
+
+  @include xl {
+    padding-top: 140px; /* Adjust based on header height */
+    padding-bottom: 120px; /* Adjust based on footer height */
+  }
 }

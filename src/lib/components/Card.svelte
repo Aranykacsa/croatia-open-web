@@ -30,11 +30,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     background: white; /* White background for clarity */
     //max-width: 700px; /* Reasonable max width */
-    width: 70%; /* Responsive width */
+    width: 50%; /* Responsive width */
     height: auto;
     margin: 20px auto; /* Center and space around */
     text-align: center; /* Centered text */
     box-sizing: border-box; /* Ensure padding is included in size */
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;    }
   }
 
   .close-button {
