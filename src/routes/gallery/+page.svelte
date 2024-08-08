@@ -1,6 +1,7 @@
 <script lang="ts">
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
+    import Photo from "$lib/components/Photo.svelte";
 
     let images = [
         'https://via.placeholder.com/300',
@@ -15,14 +16,14 @@
 <div class="fixed-header">
     <Header/>
 </div>
+
 <div class="content">
     <div class="masonry">
-        {#each images as image (image)}
-            <img src={image} alt="Image" loading="lazy">
+        {#each images as image}
+            <Photo imgUrl={image}/>
         {/each}
     </div>
 </div>
-
 
 <div class="fixed-footer">
     <Footer/>
@@ -35,11 +36,5 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
-  }
-
-  .masonry img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
   }
 </style>
