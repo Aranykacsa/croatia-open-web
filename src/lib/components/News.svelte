@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Card from './Card.svelte';
+    import Card from './NewsCard.svelte';
 
     let {news}: {
         news: {
@@ -9,8 +9,6 @@
             date: string
         }
     } = $props()
-
-    console.log(news.imgUrl);
 
     let showCard = $state(false);
 

@@ -6,6 +6,11 @@ import Footer from "$lib/components/Footer.svelte";
 <div class="fixed-header">
     <Header/>
 </div>
+
+<div class="content">
+
+</div>
+
 <div class="fixed-footer">
     <Footer/>
 </div>

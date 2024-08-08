@@ -89,6 +89,7 @@
     flex-direction: column; /* Stack title and subtitle vertically */
     justify-content: flex-start; /* Align title and subtitle to the left */
     flex: 1; /* Take available space to push navigation to the right */
+    transition: color 0.3s;
   }
 
   .title {
