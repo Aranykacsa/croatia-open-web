@@ -1,22 +1,16 @@
 {
   "news": [
     {
-      "title": "Title3",
-      "description": "<p>Description with <strong>HTML</strong> content.</p><img src='./favicon.png' alt='image'>",
-      "date": "2024.08.02.",
-      "imgUrl": "./content/minta.png"
+      "title": "Livelox",
+      "description": "\uD83D\uDD34\uD83D\uDD35 Check <strong><a href=\"https://www.livelox.com/?tab=allEvents&timePeriod=pastWeek&q=OK%2BRis&sorting=relevance\" target=\"_blank\" style=\"color: #007bff; text-decoration: underline;\">Livelox</a></strong> for variants\uD83D\uDC4D",
+      "date": "2024.08.16.",
+      "imgUrl": "./content/Livelox.png"
     },
     {
-      "title": "Title2",
-      "description": "<p>Another description with <em>different</em> formatting.</p>",
-      "date": "2024.08.01.",
-      "imgUrl": "./content/pikaso_texttoimage_university-building-illusatrtion-with-no-backgroun.jpeg"
-    },
-    {
-      "title": "Title1",
-      "description": "<p>Multiple</p><p>paragraphs</p>",
-      "date": "2024.07.31.",
-      "imgUrl": "./content/pte.png"
+      "title": "Croatia Open 2025",
+      "description": "\uD83D\uDD34\uD83D\uDD35 The next edition of <strong>Croatia Open</strong> is scheduled for <strong>August 1st -3th, 2025</strong>.\nAs before, our small organizational team works for you! \nSee you next summer in Croatia.",
+      "date": "2024.08.16.",
+      "imgUrl": "./content/content1.jpg"
     }
   ]
 }
