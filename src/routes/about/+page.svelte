@@ -7,6 +7,7 @@
         title: string,
         email: string,
         address: string,
+        description: string,
     } = about
 </script>
 
@@ -16,6 +17,7 @@
 </div>
 <div class="content">
     {@html info.title}
+    {@html info.description}
 </div>
 
 <div class="fixed-footer">
