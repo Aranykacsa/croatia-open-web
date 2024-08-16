@@ -13,7 +13,7 @@
 <div class="card-detail">
     <button class="close-button" onclick={onClose}>×</button>
     {#if news.imgUrl}
-        <img src={news.imgUrl} alt={news.title} class="card-image"/>
+        <img class="card-image" src={news.imgUrl} alt={news.title} />
     {/if}
     <h2>{news.title}</h2>
     <p>{@html news.description}</p>
@@ -37,10 +37,14 @@
     box-sizing: border-box; /* Ensure padding is included in size */
 
     img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;    }
+      width: 100%; /* Set width to 100% of the parent container */
+      height: auto; /* Automatically adjust the height to maintain aspect ratio */
+      max-width: 300px; /* Optional: limit the maximum width */
+      max-height: 300px; /* Optional: limit the maximum height */
+      object-fit: contain; /* Ensures the entire image fits inside the box */
+      border-radius: 16px; /* Rounded corners */
+      margin-bottom: 20px; /* Space below image */
+      }
   }
 
   .close-button {
@@ -61,11 +65,15 @@
   }
 
   .card-image {
-    width: auto; /* Full width image */
-    max-height: 300px;
-    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Set width to 100% of the parent container */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    max-width: 300px; /* Optional: limit the maximum width */
+    max-height: 300px; /* Optional: limit the maximum height */
+    object-fit: contain; /* Ensures the entire image fits inside the box */
+    border-radius: 16px; /* Rounded corners */
     margin-bottom: 20px; /* Space below image */
   }
+
 
   h2 {
     margin: 0 0 10px;
