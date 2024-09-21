@@ -1,8 +1,8 @@
 <script lang="ts">
     import Header from "$lib/components/Header.svelte";
     import News from "$lib/components/News.svelte";
-    import Footer from "$lib/components/Footer.svelte";
-    import descriptions from '$lib/content/content.json';
+    // import Footer from "$lib/components/Footer.svelte";
+    import descriptions from '$lib/content/news.json';
 
     type NewsData = {
         title: string;
@@ -13,47 +13,38 @@
 
     const newsList: NewsData[] = descriptions.news;
 </script>
-<main>
-    <div class="fixed-header">
-        <Header/>
-    </div>
 
-    <div class="content">
-        {#each newsList as news}
-            <News news={news}/>
-        {/each}
-    </div>
+<Header/>
 
-    <div class="fixed-footer">
-        <Footer url={"https://www.facebook.com/croatiaopen.orienteering"}/>
-    </div>
-</main>
+<div class="content">
+    {#each newsList as news, i}
+        <News news={news}/>
+    {/each}
+</div>
+
+<!--<div class="fixed-footer">-->
+<!--    <Footer/>-->
+<!--</div>-->
 
 <style lang="scss">
-    .fixed-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000; /* Ensure the header is above other content */
-        background-color: white; /* Ensure background color if needed */
-    }
+  @import "../app";
 
-    .fixed-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000; /* Ensure the footer is above other content */
-        background-color: white; /* Ensure background color if needed */
-    }
+  .content {
+    flex-wrap: wrap;
+    padding-top: 80px; /* Adjust based on header height */
+    padding-bottom: 120px; /* Adjust based on footer height */
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    gap: 30px;
+  }
 
-    .content {
-        padding-top: 60px; /* Adjust based on header height */
-        padding-bottom: 40px; /* Adjust based on footer height */
-    }
-
-    main{
-        background-image: url("/topography.svg")
-    }
+  .fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white; /* Adjust as needed */
+  }
 </style>

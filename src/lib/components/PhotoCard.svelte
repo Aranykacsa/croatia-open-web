@@ -1,24 +1,13 @@
 <script lang="ts">
-    let {news, onClose}: {
-        news: {
-            title: string;
-            description: string;
-            imgUrl?: string;
-            date: string;
-        },
+    let {imgUrl, onClose}: {
+        imgUrl: string,
         onClose: () => void
     } = $props();
 </script>
 
 <div class="card-detail">
     <button class="close-button" onclick={onClose}>×</button>
-    {#if news.imgUrl}
-        <img src={news.imgUrl} alt={news.title} class="card-image"/>
-    {/if}
-    <h2>{news.title}</h2>
-    <p>{@html news.description}</p>
-    <p class="date">{news.date}</p>
-
+    <img src={imgUrl} alt={imgUrl} class="card-image"/>
 </div>
 
 <style lang="scss">
@@ -29,12 +18,16 @@
     padding: 20px; /* Spacious padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     background: white; /* White background for clarity */
-    //max-width: 700px; /* Reasonable max width */
-    width: 70%; /* Responsive width */
-    height: auto;
+    max-width: 80%; /* Set max width to 80% of the viewport */
     margin: 20px auto; /* Center and space around */
     text-align: center; /* Centered text */
     box-sizing: border-box; /* Ensure padding is included in size */
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
   }
 
   .close-button {
@@ -55,25 +48,9 @@
   }
 
   .card-image {
-    width: auto; /* Full width image */
-    max-height: 300px;
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners */
     margin-bottom: 20px; /* Space below image */
-  }
-
-  h2 {
-    margin: 0 0 10px;
-    font-size: 1.8em; /* Slightly larger for emphasis */
-    color: #333; /* Dark text for readability */
-  }
-
-  p {
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #555; /* Grayish text for a softer look */
-  }
-  .date {
-    text-align: right;
   }
 </style>
