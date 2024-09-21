@@ -1,4 +1,5 @@
 {
+	"homepage": "https://Aranykacsa.git/croatia-open-web",
 	"name": "croatia-open-web",
 	"version": "0.0.1",
 	"private": true,
@@ -16,7 +17,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"gh-pages": "^6.1.1",
-		"serve": "^14.2.3",
+		"serve": "^6.5.8",
 		"svelte": "^5.0.0-next.72",
 		"svelte-check": "^3.8.5",
 		"typescript": "^5.5.4",
