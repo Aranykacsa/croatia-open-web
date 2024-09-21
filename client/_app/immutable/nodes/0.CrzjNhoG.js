@@ -1,0 +1,1 @@
+import{h as r,b as i,n as f,i as l,l as o}from"../chunks/disclose-version.CfR865xC.js";function d(t,e,n,a){r&&i(),e===void 0||e(t,n)}function s(t){var n;var e=(n=t.$$slots)==null?void 0:n.default;return e===!0?t.children:e}function c(t,e){var n=f(),a=l(n);d(a,s(e),{}),o(t,n)}export{c as component};
