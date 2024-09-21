@@ -42,7 +42,7 @@
       max-width: 300px; /* Optional: limit the maximum width */
       max-height: 300px; /* Optional: limit the maximum height */
       object-fit: contain; /* Ensures the entire image fits inside the box */
-      border-radius: 16px; /* Rounded corners */
+      border-radius: 8px; /* Rounded corners */
       margin-bottom: 20px; /* Space below image */
       }
   }

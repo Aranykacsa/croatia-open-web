@@ -38,18 +38,25 @@
     </div>
 
     <div class="nav-container">
-        {#each pages as page, i}
-            <div class="nav-item">
-                <label class="label-style" for={page.name} onclick={page.onClick}>{page.name}</label>
-            </div>
-            {#if i + 1 !== pages.length}
-                <div class="separator"></div>
-            {/if}
-        {/each}
-        <img src="../../mik-logo.png" alt="">
+        <div class="nav-item">
+            <label class="label-style" onclick={async () => await goto("about")}>{"About"}</label>
+        </div>
+        <div class="separator"></div>
 
-        <Hamburger pages={pages} />
+        <div class="nav-item">
+            <label class="label-style" onclick={async () => await goto("organizers")}>{"Organizers"}</label>
+        </div>
+        <div class="separator"></div>
+
+        <div class="nav-item">
+            <label class="label-style"
+                   onclick={async () => window.open("https://www.orienteeringonline.net/CompetitionBasicInfo.aspx?CompetitionID=13445")}>{"Registration"}</label>
+        </div>
+
+        <Hamburger pages={pages}/>
     </div>
+    <img src="../../mik-logo.png" alt="">
+
 </div>
 
 <style lang="scss">
@@ -57,31 +64,19 @@
   @import "../../app.scss";
 
   .header {
+    z-index: 1;
     display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
     justify-content: space-between; /* Space between title and navigation items */
     align-items: center; /* Center items vertically */
     background-color: #282c34;
-    padding: 20px;
+    padding: 25px;
+    //height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    @include xs {
-      //background-color: red;
-      padding: 10px;
-    }
-
-    @include sm {
-      //background-color: blue;
-      padding: 15px;
-    }
-
-    @include md {
-      //background-color: green;
-    }
-
-    @include lg {
-      //background-color: yellow;
-      padding: 20px;
-    }
+    height: 40px;
   }
 
   .title-container {
@@ -93,39 +88,21 @@
   }
 
   .title {
+    padding-right: 10px;
+    font-size: 1.5em; /* Smaller font size for subtitle */
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     white-space: nowrap;
-
-    @include xs {
-      font-size: 1.40em;
-    }
-
-    @include md {
-      font-size: 1.70em; /* Adjusted font size */
-    }
-
-    @include lg {
-      font-size: 2em; /* Adjusted font size */
-    }
   }
 
   .subtitle {
-    font-size: 1.25em; /* Smaller font size for subtitle */
+    font-size: 1em; /* Smaller font size for subtitle */
     color: #cccccc; /* Lighter color for subtitle */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     white-space: nowrap; /* Prevent text from wrapping */
     margin-top: 5px; /* Small space between title and subtitle */
     padding-left: 50px; /* Push text a little to the right */
-
-    @include xs {
-      font-size: 1em; /* Decreased font size */
-    }
-
-    @include lg {
-      font-size: 1.25em; /* Adjusted font size */
-    }
   }
 
 
@@ -136,35 +113,14 @@
   }
 
   .nav-item {
+    position: relative;
+    right: 60px;
     display: flex;
     align-items: center;
     padding: 0 20px;
-    font-size: 1.5em; /* Increased font size */
+    font-size: 1.25em; /* Increased font size */
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    @include xs {
-      //background-color: red;
-      font-size: 0;
-    }
-
-    @include sm {
-      //background-color: blue;
-      padding: 0 10px;
-      font-size: 1em; /* Decreased font size */
-    }
-
-    @include md {
-      //background-color: green;
-      padding: 0 15px;
-      font-size: 1.25em; /* Adjusted font size */
-    }
-
-    @include lg {
-      //background-color: yellow;
-      padding: 0 20px;
-      font-size: 1.5em; /* Adjusted font size */
-    }
   }
 
   .label-style {
@@ -179,6 +135,8 @@
   }
 
   .separator {
+    position: relative;
+    right: 60px;
     display: flex;
     align-items: center;
     transform: rotate(45deg);
@@ -186,32 +144,11 @@
     width: 4px; /* Set a consistent width */
     background-color: #61dafb; /* Light blue color for the separator */
     margin: 0 15px; /* Spacing around the separator */
-
-    @include xs {
-      width: 0;
-    }
-
-    @include sm {
-      margin: 0 5px; /* Spacing around the separator */
-      width: 2px;
-      //height: 15px; /* Adjusted height */
-    }
-
-    @include md {
-      margin: 0 10px; /* Spacing around the separator */
-      width: 3px;
-      //height: 18px; /* Adjusted height */
-    }
-
-    @include lg {
-      margin: 0 15px; /* Spacing around the separator */
-      width: 4px;
-      //height: 20px; /* Adjusted height */
-    }
   }
 
   img {
     position: relative;
+    right: 50px;
     @include xs {
       //width: 30px;
       width: 0;

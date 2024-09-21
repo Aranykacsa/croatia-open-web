@@ -31,5 +31,6 @@
         padding: 0 0 20px 20px;
         font-size: 1em; /* Increased font size */
         color: #ffffff;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    }
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 </style>

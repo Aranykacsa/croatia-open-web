@@ -84,7 +84,7 @@
     overflow: hidden; /* Hide overflow when closed */
     padding: 0 20px;
     border-radius: 0 0 0 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     z-index: 999; /* Ensure it stays above other content */
 
