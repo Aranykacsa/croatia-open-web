@@ -68,22 +68,12 @@
     border-radius: 8px;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     margin-top: 16px;
-    //margin-bottom: 16px;
     text-align: center;
     cursor: pointer;
     background: #ffffff;
     position: relative;
     transition: 0.3s ease;
   }
-
-  //.card-content {
-  //  display: flex;
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  align-items: center;
-  //  height: 100%;
-  //  position: relative; /* Ensures relative positioning within the card */
-  //}
 
   .card-image {
     max-width: 100%;
